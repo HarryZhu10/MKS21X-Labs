@@ -3,6 +3,10 @@ public class Kitty {
   private String name;
   private int age;
 
+public Kitty() {
+  name = "Mittens";
+  age = 2;
+}
 
   public Kitty(String startName, int startAge) {
     name = startName;
@@ -10,16 +14,10 @@ public class Kitty {
   }
 
   public String getName() {
-    if (name == null) {
-      return "Mittens";
-    }
     return name;
   }
 
   public int getAge() {
-    if (name == null) {
-  return 2;
-  }
     return age;
   }
 
