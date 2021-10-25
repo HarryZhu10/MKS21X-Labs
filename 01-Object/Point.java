@@ -15,4 +15,9 @@ public class Point{
     return y;
   }
 
+public static double distance(Point P1, Point P2) {
+return Math.sqrt((P1.getX() - P2.getX()) * ((P1.getX() - P2.getX())) + ((P1.getY() - P2.getY())) * ((P1.getY() - P2.getY())));
+
+}
+
 }
