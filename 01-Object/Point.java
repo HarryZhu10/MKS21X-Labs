@@ -20,4 +20,8 @@ return Math.sqrt((P1.getX() - P2.getX()) * ((P1.getX() - P2.getX())) + ((P1.getY
 
 }
 
+public double distanceTo(Point P2) {
+  return Math.sqrt((x - P2.getX()) * (x - P2.getX()) + (y - P2.getY()) * (y - P2.getY()));
+}
+
 }
