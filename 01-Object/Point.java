@@ -18,5 +18,9 @@ public class Point{
 public double xDiff(Point P1, Point P2) {
   return P1.x - P2.x;
 }
-  
+
+public double yDiff(Point P1, Point P2) {
+  return P1.y - P1.x;
+}
+
 }
