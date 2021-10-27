@@ -45,7 +45,9 @@ public void setVertex(int n, Point p) {
     }
 }
 
-
+public String toString() {
+  return "{" + v1 + ", " + v2 + ", " + v3 + "}";
+}
 
 
 
