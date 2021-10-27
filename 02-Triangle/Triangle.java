@@ -49,6 +49,22 @@ public String toString() {
   return "{" + v1 + ", " + v2 + ", " + v3 + "}";
 }
 
+public boolean equals(Triangle other) {
+  return v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);
+}
 
+public String classify() {
+  if (Point.distance(v1,v2) == Point.distance(v2,v3) && Point.distance(v2, v3) == Point.distance(v3,v1)) {
+    return "equilateral";
+  } else if ((Point.distance(v1,v2)).closeEnough(Point.distance(v2,v3)) || (Point.distance(v2, v3).closeEnough(Point.distance(v3,v1))) || (Point.distance(v3,v1).closeEnough(Point.distance(v1,v2)))) {
+    return "isosceles";
+  } else {
+    return "scalene";
+  }
+}
+
+public double area() {
+  double s = 
+}
 
 }
