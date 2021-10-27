@@ -54,9 +54,12 @@ public boolean equals(Triangle other) {
 }
 
 public String classify() {
-  if (Point.distance(v1,v2) == Point.distance(v2,v3) && Point.distance(v2, v3) == Point.distance(v3,v1)) {
+  double length1 = Point.distance(v1,v2);
+  double length2 = Point.distance(v2,v3);
+  double length3 = Point.distance(v3,v1);
+  if ((Point.closeEnough(length2,length1)) && (Point.closeEnough(length3,length2))) {
     return "equilateral";
-  } else if ((Point.distance(v1,v2)).closeEnough(Point.distance(v2,v3)) || (Point.distance(v2, v3).closeEnough(Point.distance(v3,v1))) || (Point.distance(v3,v1).closeEnough(Point.distance(v1,v2)))) {
+  } else if ((Point.closeEnough(length2,length1)) || (Point.closeEnough(length3,length2)) || (Point.closeEnough(length1,length3))) {
     return "isosceles";
   } else {
     return "scalene";
@@ -68,7 +71,7 @@ public double area() {
   double b = Point.distance(v2,v3);
   double c = Point.distance(v3,v1);
 
-  double semiP = (a + b + c) / 2;
+  double s = (a + b + c) / 2;
 
 return Math.sqrt(s * (s - a) * (s - b) * (s - c));
 
