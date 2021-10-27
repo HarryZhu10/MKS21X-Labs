@@ -64,7 +64,14 @@ public String classify() {
 }
 
 public double area() {
-  double s = 
+  double a = Point.distance(v1,v2);
+  double b = Point.distance(v2,v3);
+  double c = Point.distance(v3,v1);
+
+  double semiP = (a + b + c) / 2;
+
+return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
 }
 
 }
