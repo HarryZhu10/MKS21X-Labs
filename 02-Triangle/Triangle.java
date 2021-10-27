@@ -50,7 +50,10 @@ public String toString() {
 }
 
 public boolean equals(Triangle other) {
-  return v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);
+  if (v1 != null && v2 != null && v3 != null) {
+    return v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);
+  }
+  return false;
 }
 
 public String classify() {
