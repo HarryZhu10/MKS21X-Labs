@@ -31,13 +31,11 @@ public String toString() {
   return "(" + x + ", " + y + ")";
 }
 
-public boolean closeEnough(double a, double b) {
+public static boolean closeEnough(double a, double b) {
   return (a == 0 && b == 0) || Math.abs((a - b) / b) <= 0.00001;
 }
 
 public boolean equals(Point other) {
-    return (closeEnough(x, other.x) && closeEnough(y, other.y);
+    return (closeEnough(x, other.x) && closeEnough(y, other.y));
   }
-}
-
 }
