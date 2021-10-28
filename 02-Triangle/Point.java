@@ -36,6 +36,9 @@ public static boolean closeEnough(double a, double b) {
 }
 
 public boolean equals(Point other) {
+  if (point == null) {
+    return false;
+  }
     return (closeEnough(x, other.x) && closeEnough(y, other.y));
   }
 }
