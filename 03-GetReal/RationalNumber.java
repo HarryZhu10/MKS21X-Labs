@@ -38,7 +38,7 @@ public class RationalNumber extends RealNumber
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
-    return false;
+    return nume == other.nume && deno == other.deno;
   }
 
 
@@ -46,7 +46,7 @@ public class RationalNumber extends RealNumber
   *@return the value expressed as "3/4" or "8/3"
   */
   public String toString(){
-    return "0";
+    return "" + nume + "/" + deno;
   }
 
   /**Calculate the GCD of two integers.
