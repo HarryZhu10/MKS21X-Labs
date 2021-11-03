@@ -20,7 +20,7 @@ public class RationalNumber extends RealNumber
   }
 
   public double getValue(){
-    return numerator / denominator;
+    return (0.0 + numerator) / denominator;
   }
 
   /**
@@ -66,10 +66,20 @@ public class RationalNumber extends RealNumber
     /*use euclids method or a better one*/
     //http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
     int result = 0;
-    for (int r = a % b; r >= 0; result = r  ) {
+    if (b == 0) {
+      a = 0;
+      b = 1;
+    }
+    for (int r = 1; r >= 0; result = r  ) {
+      if (a < b) {
       r = a % b;
       a = b;
       b = r;
+    } else if (a > b) {
+      r = b % a;
+      b = a;
+      a = r;
+    }
     }
     return result;
   }
@@ -90,8 +100,10 @@ public class RationalNumber extends RealNumber
   public RationalNumber multiply(RationalNumber other){
     numerator = numerator * other.numerator;
     denominator = denominator * other.denominator;
-    reduce();
-    return new RationalNumber(numerator, denominator);
+
+    RationalNumber result = new RationalNumber(numerator, denominator);
+    result.reduce();
+    return result;
   }
 
   /**
@@ -100,8 +112,9 @@ public class RationalNumber extends RealNumber
   public RationalNumber divide(RationalNumber other){
     numerator = numerator * other.numerator;
     denominator = denominator * other.denominator;
-    reduce();
-    return new RationalNumber(denominator,numerator);
+    RationalNumber result = new RationalNumber(denominator,numerator);
+    result.reduce();
+    return result;
   }
 
   /**
@@ -110,8 +123,10 @@ public class RationalNumber extends RealNumber
   public RationalNumber add(RationalNumber other){
     numerator = numerator * gcd(numerator,denominator) + other.numerator * gcd(numerator,denominator);
     denominator = denominator * gcd(numerator,denominator) + other.denominator * gcd(numerator,denominator);
-    reduce();
-    return new RationalNumber(numerator,denominator);
+
+    RationalNumber result = new RationalNumber(numerator,denominator);
+    result.reduce();
+    return result;
   }
   /**
   *Return a new RationalNumber that this minus the other
@@ -119,7 +134,8 @@ public class RationalNumber extends RealNumber
   public RationalNumber subtract(RationalNumber other){
     numerator = numerator * gcd(numerator,denominator) - other.numerator * gcd(numerator,denominator);
     denominator = denominator * gcd(numerator,denominator) - other.denominator * gcd(numerator,denominator);
-    reduce();
-    return new RationalNumber(numerator,denominator);
+    RationalNumber result = new RationalNumber(numerator,denominator);
+    result.reduce();
+    return result;
   }
 }
