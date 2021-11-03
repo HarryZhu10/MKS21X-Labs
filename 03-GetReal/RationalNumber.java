@@ -62,7 +62,7 @@ public class RationalNumber extends RealNumber
     /*use euclids method or a better one*/
     //http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
     int result = 0;
-    for (int r = 0; r >= 0; result = r  ) {
+    for (int r = a % b; r >= 0; result = r  ) {
       r = a % b
       a = b;
       b = r;
@@ -76,7 +76,8 @@ public class RationalNumber extends RealNumber
   *reduced after construction.
   */
   private void reduce(){
-
+    numerator = numerator / gcd(numerator,denominator);
+    denominator = denominator / gcd(numerator,denominator);
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**
