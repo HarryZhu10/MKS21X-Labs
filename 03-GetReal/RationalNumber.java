@@ -63,7 +63,7 @@ public class RationalNumber extends RealNumber
     //http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
     int result = 0;
     for (int r = a % b; r >= 0; result = r  ) {
-      r = a % b
+      r = a % b;
       a = b;
       b = r;
     }
@@ -84,26 +84,35 @@ public class RationalNumber extends RealNumber
   *Return a new RationalNumber that is the product of this and the other
   */
   public RationalNumber multiply(RationalNumber other){
-    return null;
+    numerator = numerator * other.numerator;
+    denominator = denominator * other.denominator;
+    reduce();
+    return new RationalNumber(numerator, denominator);
   }
 
   /**
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return null;
+    numerator = numerator * other.numerator;
+    denominator = denominator * other.denominator;
+    reduce()
+    return new RationalNumber(denominator,numerator);
   }
 
   /**
   *Return a new RationalNumber that is the sum of this and the other
   */
   public RationalNumber add(RationalNumber other){
-    return null;
+    numerator = numerator * gcd(numerator,denominator) + other.numerator * gcd(numerator,denominator);
+    denominator = denominator * gcd(numerator,denominator) + other.denominator * gcd(numerator,denominator);
+    reduce()
+    return new RationalNumber(numerator,denominator);
   }
   /**
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return null;
+    return this - other;
   }
 }
