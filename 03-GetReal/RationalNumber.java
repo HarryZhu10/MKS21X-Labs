@@ -10,9 +10,13 @@ public class RationalNumber extends RealNumber
   public RationalNumber(int nume, int deno){
 
     super(0.0);//this value is ignored!
-
+    if (deno == 0) {
+      this.numerator = 0;
+      this.denominator = 1;
+    } else {
     this.numerator = nume;
     this.denominator = deno;
+    }
   }
 
   public double getValue(){
@@ -96,7 +100,7 @@ public class RationalNumber extends RealNumber
   public RationalNumber divide(RationalNumber other){
     numerator = numerator * other.numerator;
     denominator = denominator * other.denominator;
-    reduce()
+    reduce();
     return new RationalNumber(denominator,numerator);
   }
 
@@ -106,13 +110,16 @@ public class RationalNumber extends RealNumber
   public RationalNumber add(RationalNumber other){
     numerator = numerator * gcd(numerator,denominator) + other.numerator * gcd(numerator,denominator);
     denominator = denominator * gcd(numerator,denominator) + other.denominator * gcd(numerator,denominator);
-    reduce()
+    reduce();
     return new RationalNumber(numerator,denominator);
   }
   /**
   *Return a new RationalNumber that this minus the other
   */
   public RationalNumber subtract(RationalNumber other){
-    return this - other;
+    numerator = numerator * gcd(numerator,denominator) - other.numerator * gcd(numerator,denominator);
+    denominator = denominator * gcd(numerator,denominator) - other.denominator * gcd(numerator,denominator);
+    reduce();
+    return new RationalNumber(numerator,denominator);
   }
 }
