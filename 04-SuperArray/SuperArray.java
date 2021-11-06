@@ -12,9 +12,10 @@ public int size() {
   return size;
 }
 
-public void add(String x) {
+public boolean add(String x) {
   data[size] = x;
   size ++;
+  return true;
 }
 public String toString() {
   String y = "[";
