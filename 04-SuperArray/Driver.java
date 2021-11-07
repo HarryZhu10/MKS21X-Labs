@@ -2,22 +2,24 @@
 public class Driver {
   public static void main(String args[]){
     SuperArray SA = new SuperArray();
-    alist.add("Fish");
+    SA.add("Fish");
     //displaying elements
     System.out.println(SA);
     System.out.println(SA.toStringDebug());
 
-    alist.add("Cat");
+    SA.add("Cat");
     //displaying elements
     System.out.println(SA);
     System.out.println(SA.toStringDebug());
 
-    alist.add("Dog");
-    alist.add("Pig");
-    alist.add("Cow");
+    SA.add("Dog");
+    SA.add("Pig");
+    SA.add("Cow");
     //displaying elements
     System.out.println(SA);
     System.out.println(SA.toStringDebug());
-
+    System.out.println(SA.get(2));
+    System.out.println(SA.get(11));
+    System.out.println(SA.get(6));
   }
 }
