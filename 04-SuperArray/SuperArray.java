@@ -12,7 +12,14 @@ public int size() {
   return size;
 }
 
+public SuperArray(int initialCapacity) {
+   data = new String[initialCapacity];
+}
+
 public boolean add(String x) {
+  if (size == data.length) {
+    resize();
+  }
   data[size] = x;
   size ++;
   return true;
@@ -57,6 +64,13 @@ public String set(int index, String element) {
   }
   data[index] = element;
   return copy;
+}
+private void resize() {
+  String[] newArray = new String[2 * data.length + 1];
+  for (int i = 0; i < size; i ++) {
+    newArray[i] = data[i];
+  }
+  data = newArray;
 }
 
 }
