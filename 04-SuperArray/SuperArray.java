@@ -42,10 +42,10 @@ public String toStringDebug() {
 }
 
 public String get(int index) {
-  if (index < 0 or index >= size) {
+  if (index < 0 || index >= size) {
     return "error";
   }
-  return size - 1 + "";
+  return "" + data[index];
 }
 
 }
