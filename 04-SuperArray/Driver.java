@@ -21,5 +21,7 @@ public class Driver {
     System.out.println(SA.get(2));
     System.out.println(SA.get(11));
     System.out.println(SA.get(6));
+    System.out.println(SA.set(1,"Test"));
+    System.out.println(SA);
   }
 }
