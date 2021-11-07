@@ -43,9 +43,20 @@ public String toStringDebug() {
 
 public String get(int index) {
   if (index < 0 || index >= size) {
-    return "error";
+    System.out.println("error");
+    return "null";
   }
   return "" + data[index];
+}
+
+public String set(int index, String element) {
+  String copy = data[index];
+  if (index >= size || index < 0) {
+    System.out.println("error");
+    return "null";
+  }
+  data[index] = element;
+  return copy;
 }
 
 }
