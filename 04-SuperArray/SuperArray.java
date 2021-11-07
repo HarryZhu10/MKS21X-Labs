@@ -41,4 +41,11 @@ public String toStringDebug() {
   return y + "]";
 }
 
+public String get(int index) {
+  if (index < 0 or index >= size) {
+    return "error";
+  }
+  return size - 1 + "";
+}
+
 }
