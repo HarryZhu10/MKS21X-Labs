@@ -72,5 +72,22 @@ private void resize() {
   }
   data = newArray;
 }
-
+public String remove(int index) {
+  if (index >= data.length) {
+    System.out.println("error");
+    return "null"; //Ask Mr.K if this is necessary
+  }
+  String[] newVersion = new String[data.length]; //Ask if we need to make it so that the size of the whole array will decrease as well
+  String copy = data[index];
+  for (int i = 0; i < data.length - 1; i ++) {
+    if (i >= index) {
+      newVersion[i] = data[i + 1];
+    } else {
+      newVersion[i] = data[i];
+    }
+  }
+  size = size - 1;
+  data = newVersion;
+  return copy;
+}
 }
