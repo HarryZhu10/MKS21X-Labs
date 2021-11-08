@@ -8,6 +8,8 @@ public class Driver {
     System.out.println(SA);
     System.out.println(SA.toStringDebug());
 
+//Testing
+
     SA.add("Cat");
     //displaying elements
     System.out.println(SA);
