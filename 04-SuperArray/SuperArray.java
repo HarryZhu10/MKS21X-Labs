@@ -76,7 +76,7 @@ public String remove(int index) {
   if (index >= data.length) {
     resize();
   }
-  String[] newVersion = new String[data.length]; //Ask if we need to make it so that the size of the whole array will decrease as well
+  String[] newVersion = new String[data.length];
   String copy = data[index];
   for (int i = 0; i < data.length - 1; i ++) {
     if (i >= index) {
@@ -126,6 +126,25 @@ boolean on = true;
       on = false;
     }
   }
+}
+
+public boolean remove(String target) {
+  boolean on = false;
+  if (indexOf(target) == -1) {
+    return false;
+  } else {
+    for (int i = 0; i < size; i ++) {
+      if (indexOf(target) == i) {
+        on = true;
+      }
+      if (on && i != size - 1) {
+        data[i] = data[i + 1];
+      } else if (i == size - 1) {
+        data[i] = "null";
+      }
+    }
+  }
+return true;
 }
 
 }
