@@ -90,4 +90,23 @@ public String remove(int index) {
   data = newVersion;
   return copy;
 }
+
+public int indexOf(String str) {
+  for (int i = 0; i < size; i ++) {
+    if (str.compareTo(data[i]) == 0) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+public int lastIndexOf(String str) {
+  for (int i = size - 1; i >= 0; i --) {
+    if (str.compareTo(data[i]) == 0) {
+      return i;
+    }
+  }
+  return -1;
+}
+
 }
