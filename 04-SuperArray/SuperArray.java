@@ -74,8 +74,7 @@ private void resize() {
 }
 public String remove(int index) {
   if (index >= data.length) {
-    System.out.println("error");
-    return "null"; //Ask Mr.K if this is necessary
+    resize();
   }
   String[] newVersion = new String[data.length]; //Ask if we need to make it so that the size of the whole array will decrease as well
   String copy = data[index];
@@ -107,6 +106,26 @@ public int lastIndexOf(String str) {
     }
   }
   return -1;
+}
+
+public void add(int index, String value) {
+  if (index < 0 || index >= size) {
+    System.out.println("error");
+  }
+
+  if (size + 1 > data.length) {
+    resize();
+  }
+boolean on = true;
+  for (int i = size - 1; i >= 1; i --) {
+    if (on) {
+      data[i + 1] = data[i];
+    }
+    if (i == index) {
+      data[i] = value;
+      on = false;
+    }
+  }
 }
 
 }
