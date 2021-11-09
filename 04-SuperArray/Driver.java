@@ -38,5 +38,11 @@ public class Driver {
     System.out.println(Test1.toStringDebug());
     Test1.remove(3);
     System.out.println(Test1.toStringDebug());
+    Test1.add("Is");
+    System.out.println(Test1.indexOf("Dog"));
+    System.out.println(Test1.indexOf("Is"));
+    System.out.println(Test1.lastIndexOf("Is"));
+    System.out.println(Test1.lastIndexOf("Dog"));
+
   }
 }
