@@ -50,8 +50,7 @@ public String toStringDebug() {
 
 public String get(int index) {
   if (index < 0 || index >= size) {
-    System.out.println("error");
-    return "null";
+    throw new IndexOutOfBoundsException ("The index, " + index + " is out of bounds");
   }
   return "" + data[index];
 }
