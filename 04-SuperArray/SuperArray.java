@@ -110,7 +110,7 @@ public int lastIndexOf(String str) {
 
 public void add(int index, String value) {
   if (index < 0 || index >= size) {
-    System.out.println("Index Out of Bounds");
+    throw new IndexOutOfBoundsException ("The index, " + index + " is out of bounds");
   }
 
   if (size + 1 > data.length) {
