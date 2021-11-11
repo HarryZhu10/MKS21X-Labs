@@ -13,6 +13,9 @@ public int size() {
 }
 
 public SuperArray(int initialCapacity) {
+  if (initialCapacity < 0) {
+    throw new IllegalArgumentException ("The size can't be negative.");
+  }
    data = new String[initialCapacity];
 }
 
@@ -50,7 +53,7 @@ public String toStringDebug() {
 
 public String get(int index) {
   if (index < 0 || index >= size) {
-    throw new IndexOutOfBoundsException ("The index, " + index + " is out of bounds");
+    throw new IndexOutOfBoundsException ("The index, " + index + ", is out of bounds");
   }
   return "" + data[index];
 }
@@ -58,8 +61,7 @@ public String get(int index) {
 public String set(int index, String element) {
   String copy = data[index];
   if (index >= size || index < 0) {
-    System.out.println("error");
-    return "null";
+    throw new IndexOutOfBoundsException ("The index, " + index + ", is out of bounds");
   }
   data[index] = element;
   return copy;
@@ -72,6 +74,10 @@ private void resize() {
   data = newArray;
 }
 public String remove(int index) {
+  if (index < 0 || index >= size) {
+    throw new IndexOutOfBoundsException ("The index, " + index + ", is out of bounds");
+  }
+
   if (index >= data.length) {
     resize();
   }
@@ -109,7 +115,7 @@ public int lastIndexOf(String str) {
 
 public void add(int index, String value) {
   if (index < 0 || index >= size) {
-    throw new IndexOutOfBoundsException ("The index, " + index + " is out of bounds");
+    throw new IndexOutOfBoundsException ("The index, " + index + ", is out of bounds");
   }
 
   if (size + 1 > data.length) {
