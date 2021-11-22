@@ -4,12 +4,12 @@ public class ArrayListPractice{
   public static ArrayList<String> replaceEmpty( ArrayList<String> data){
   //return an new ArrayList that has all of the values of the original ArrayList except
   //that all empty strings are replaced with the word "Empty".
-  ArrayList<String> newList = new ArrayList<String>();
+  ArrayList<String> newList = new ArrayList<String>(data.size());
   for (int i = 0; i < data.size(); i ++) {
     if (data.get(i) != null) {
-      newList.set(i,data.get(i));
+      newList.add(data.get(i));
     } else {
-      newList.set(i,"Empty");
+      newList.add("Empty");
     }
   }
   return newList;
