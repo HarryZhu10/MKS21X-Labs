@@ -7,9 +7,9 @@ public class UserInput {
     System.out.println("Enter a non negative number. A negative number will end the program:");
     while (negative.nextDouble() > 0) {
       container.add(negative.nextDouble());
-      System.out.println("Enter a non negative number. A negative number will end the program:");   //Ask how to fix the issues of having to give two inputs before it prints this
+      System.out.println("Enter a non negative number. A negative number will end the program:");   //Use variables to fix issue
     }
-
+negative.close();
   String str = "[";
   for (int i = 0; i < container.size(); i ++) {
     if (i < container.size() - 1) {
@@ -38,6 +38,7 @@ for (int i = 0; i < container.size(); i ++) {
     min = container.get(i);
   }
 }
+
 System.out.println("Min value: " + min);
 System.out.println("Max value: " + max);
 }
