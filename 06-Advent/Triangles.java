@@ -23,6 +23,21 @@ public static void main(String[] args) {
 } catch (FileNotFoundException ex) {
          System.out.println("File not found");
      }
+
+
+
+  try{
+    File file = new File("Test.txt");
+    Scanner check = new Scanner(file);
+    int count = 0;
+    while ()
+
+  } catch (FileNotFoundException ex) {
+         System.out.println("File not found");
+     }
+
+
+
 }
 
 }
