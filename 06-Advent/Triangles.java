@@ -11,8 +11,7 @@ public static void main(String[] args) {
   int count = 0;
   if (Integer.parseInt(args[1]) == 1) {
     try {
-      File file = new File("Test.txt");
-      Scanner check = new Scanner(file);
+      Scanner check = new Scanner(argFile);
       while (check.hasNextInt()) {
         int side1 = check.nextInt();
         int side2 = check.nextInt();
@@ -31,8 +30,7 @@ public static void main(String[] args) {
 
 if (Integer.parseInt(args[1]) == 2) {
   try{
-    File file = new File("Test.txt");
-    Scanner check = new Scanner(file);
+    Scanner check = new Scanner(argFile);
     while (check.hasNextInt()) {
       int t1S1 = check.nextInt();
       int t2S1 = check.nextInt();
