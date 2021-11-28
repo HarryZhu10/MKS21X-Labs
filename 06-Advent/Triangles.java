@@ -7,11 +7,12 @@ public class Triangles {
 
 public static void main(String[] args) {
   File argFile = new File(args[0]);
+  int total = 0;
+  int count = 0;
   if (Integer.parseInt(args[1]) == 1) {
     try {
       File file = new File("Test.txt");
       Scanner check = new Scanner(file);
-      int count = 0;
       while (check.hasNextInt()) {
         int side1 = check.nextInt();
         int side2 = check.nextInt();
@@ -32,7 +33,6 @@ if (Integer.parseInt(args[1]) == 2) {
   try{
     File file = new File("Test.txt");
     Scanner check = new Scanner(file);
-    int total = 0;
     while (check.hasNextInt()) {
       int t1S1 = check.nextInt();
       int t2S1 = check.nextInt();
