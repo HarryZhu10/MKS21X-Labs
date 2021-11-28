@@ -22,24 +22,45 @@ public static void main(String[] args) {
         }
       }
       check.close();
-      System.out.println("" + count);
     } catch (FileNotFoundException ex) {
           System.out.println("File not found");
         }
-
+        System.out.println("" + count);
       }
 
 if (Integer.parseInt(args[1]) == 2) {
   try{
     File file = new File("Test.txt");
     Scanner check = new Scanner(file);
-    int count = 0;
-    while ()
+    int total = 0;
+    while (check.hasNextInt()) {
+      int t1S1 = check.nextInt();
+      int t2S1 = check.nextInt();
+      int t3S1 = check.nextInt();
+      int t1S2 = check.nextInt();
+      int t2S2 = check.nextInt();
+      int t3S2 = check.nextInt();
+      int t1S3 = check.nextInt();
+      int t2S3 = check.nextInt();
+      int t3S3 = check.nextInt();
 
+      if (t1S1 + t1S2 > t1S3 && t1S2 + t1S3 > t1S1 && t1S1 + t1S3 > t1S2) {
+        total ++;
+      }
+
+      if (t2S1 + t2S2 > t2S3 && t2S2 + t2S3 > t2S1 && t2S1 + t2S3 > t2S2) {
+        total ++;
+      }
+
+      if (t3S1 + t3S2 > t3S3 && t3S2 + t3S3 > t3S1 && t3S1 + t3S3 > t3S2) {
+        total ++;
+      }
+    }
+    check.close();
   } catch (FileNotFoundException ex) {
          System.out.println("File not found");
      }
-
+System.out.println("" + total);
 
 
 }
