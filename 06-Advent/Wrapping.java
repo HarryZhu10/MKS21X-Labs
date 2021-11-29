@@ -4,16 +4,15 @@ import java.util.Arrays;
 import java.io.FileNotFoundException;
 public class Wrapping {
   public static void main(String[] args) {
-    File argsFile = new File(args[0]);
+    File argFile = new File(args[0]);
     int totalAmount = 0;
     try {
-      Scanner in = new Scanner(argsFile);
-      while (in.hasNextInt()) {
-        int length = in.nextInt();
-        in.nextChar();
-        int width = in.nexInt();
-        in.nextChar();
-        int height = in.nextInt();
+      Scanner in = new Scanner(argFile);
+      while (in.hasNextLine()) {
+        String[] nums = in.nextLine().split("x");
+        int length = Integer.parseInt(nums[0]);
+        int width = Integer.parseInt(nums[1]);
+        int height = Integer.parseInt(nums[2]);
         int minArea = length * width;
 
         if (length * height < minArea) {
