@@ -48,23 +48,31 @@ public class Non {
         int count = 0;
         int score = 0;
         String str = in.nextLine();
-        for (int i = 0; i < str.length(); i ++) {
-          for (int x = i + 2; x < str.length(); x ++) {
+        for (int i = 0; i < str.length() - 3; i ++) {
+          for (int x = i + 2; x < str.length() - 1; x ++) {
             if (str.substring(i,i + 2).equals(str.substring(x,x + 2))) {
               count ++;
             }
+            }
+
+          if (i != 0 && i < str.length() - 2) {
+            if (str.charAt(i) == str.charAt(i + 2)) {
+              score ++;
+            }
+            }
           }
-        }
+
         if (count >= 1) {
           score ++;
         }
         if (score == 2) {
-          total++;
+          total2++;
         }
       }
     } catch (FileNotFoundException ex) {
 
     }
-
+System.out.println("" + total2);
+}
 }
 }
