@@ -6,6 +6,7 @@ public class Non {
   public static void main(String[] args) {
     File argFile = new File(args[0]);
     int total = 0;
+    int total2 = 0;
     if (Integer.parseInt(args[1]) == 1) {
       try {
         Scanner in = new Scanner(argFile);
@@ -39,5 +40,31 @@ public class Non {
       }
       System.out.println("" + total);
   }
+
+  if (Integer.parseInt(args[1]) == 2) {
+    try {
+      Scanner in = new Scanner(argFile);
+      while (in.hasNextLine()) {
+        int count = 0;
+        int score = 0;
+        String str = in.nextLine();
+        for (int i = 0; i < str.length(); i ++) {
+          for (int x = i + 2; x < str.length(); x ++) {
+            if (str.substring(i,i + 2).equals(str.substring(x,x + 2))) {
+              count ++;
+            }
+          }
+        }
+        if (count >= 1) {
+          score ++;
+        }
+        if (score == 2) {
+          total++;
+        }
+      }
+    } catch (FileNotFoundException ex) {
+
+    }
+
 }
 }
