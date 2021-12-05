@@ -7,7 +7,7 @@ public class BinarySearch {
   int minIndex = 0;
   int middle = (maxIndex + minIndex) / 2;
 
-  while (min <= max) {
+  while (minIndex <= maxIndex) {
     if (target == data[middle]) {
       return middle;
     }
@@ -26,9 +26,7 @@ public class BinarySearch {
 
   public static void main (String[] args) {
     int[] data = {2,3,5,1,2,22};
-    int[] test = data;
-    Arrays.toString(test);
-    System.out.println(Arrays.toString(test));
+    System.out.println(binarySearch(data, 3));
   }
 
 }
