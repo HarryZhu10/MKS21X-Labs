@@ -5,10 +5,13 @@ public class Sorts {
     bubbleSort(messyList);
     int[] sortedList = {1,1,2,3,5,5};
     System.out.println(Arrays.toString(messyList) + " should be the same as " + Arrays.toString(sortedList));
-    System.out.println("" + minVal(messyList));
+    int[] test2 = {6,5,7,0,6,5};
+    System.out.println(Arrays.toString(test2));
+    selectionSort(test2);
   }
 
-/* Bubble Sort
+/*
+Bubble Sort
 */
 
   public static void bubbleSort(int[] data) {
@@ -29,7 +32,7 @@ Find Minimum value method
 */
 
 public static int minVal(int[] ary, int index) {
-  int min = ary[0];
+  int min = ary[index];
   for (int i = index; i < ary.length; i ++) {
     if (ary[i] < min) {
       min = ary[i];
@@ -38,14 +41,35 @@ public static int minVal(int[] ary, int index) {
   return min;
 }
 
+/*
+Swap method
+*/
 
+public static void swap(int[] ary, int index1, int index2) {
+  int save = ary[index2];
+  ary[index2] = ary[index1];
+  ary[index1] = save;
+}
+
+public static int aryIndexOf(int[] ary, int start, int target) {
+  for (int i = start; i < ary.length; i ++) {
+    if (target == ary[i]) {
+      return i;
+    }
+  }
+  return -1;
+}
   /*Selection sort
    */
 
+//Remember to ask Mr.K if he is checking on the number of steps/efficieny of the sort methods
+
   public static void selectionSort(int [] ary) {
-    int start = 0
     for(int i = 0; i < ary.length; i ++) {
-      
+      int min = minVal(ary, i);
+      //You might need to add a condition for if i == minVal
+      swap(ary, i, aryIndexOf(ary, i, min));
+      System.out.println(Arrays.toString(ary));
     }
   }
 
