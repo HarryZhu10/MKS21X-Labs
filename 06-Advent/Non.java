@@ -3,6 +3,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.io.FileNotFoundException;
 public class Non {
+
   public static void main(String[] args) {
     File argFile = new File(args[0]);
     int total = 0;
@@ -45,26 +46,31 @@ public class Non {
     try {
       Scanner in = new Scanner(argFile);
       while (in.hasNextLine()) {
-        int count = 0;
         int score = 0;
         String str = in.nextLine();
+        String str1 = "";
+        String str2 = "";
+        boolean stop1 = false;
+        boolean stop2 = false;
         for (int i = 0; i < str.length() - 3; i ++) {
+          str1 = str.substring(i,i + 2);
           for (int x = i + 2; x < str.length() - 1; x ++) {
-            if (str.substring(i,i + 2).equals(str.substring(x,x + 2))) {
-              count ++;
-            }
-            }
-
-          if (i != 0 && i < str.length() - 2) {
-            if (str.charAt(i) == str.charAt(i + 2)) {
+            str2 = str.substring(x, x + 2);
+            if (str1.equals(str2) && !stop1) {
               score ++;
+              stop1 = true;
+            }
+            }
+          }
+        for(int i = 0; i < str.length() - 2; i++) {
+          if (i != 0 && i < str.length() - 1) {
+            if (str.charAt(i) == str.charAt(i + 2) && !stop2) {
+              score ++;
+              stop2 = true;
             }
             }
           }
 
-        if (count >= 1) {
-          score ++;
-        }
         if (score == 2) {
           total2++;
         }
