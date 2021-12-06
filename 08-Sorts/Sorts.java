@@ -15,7 +15,7 @@ Bubble Sort
 */
 
   public static void bubbleSort(int[] data) {
-  for (int x = data.length;x >= 0;x --) {
+  for (int x = data.length; x >= 0; x --) {
     for (int i = 0; i < x - 1; i ++) {
       int save = 0;
       if (data[i] > data[i + 1]) {
@@ -62,15 +62,25 @@ public static int aryIndexOf(int[] ary, int start, int target) {
   /*Selection sort
    */
 
-//Remember to ask Mr.K if he is checking on the number of steps/efficieny of the sort methods
-
   public static void selectionSort(int [] ary) {
     for(int i = 0; i < ary.length; i ++) {
       int min = minVal(ary, i);
       //You might need to add a condition for if i == minVal
       swap(ary, i, aryIndexOf(ary, i, min));
-      System.out.println(Arrays.toString(ary));
     }
   }
+
+/*
+Insertion Sort
+*/
+
+public static void insertionSort(int[]data){
+  for (int i = 1; i < data.length; i ++) {
+    if (data[i] < data[i - 1]) {
+      
+    }
+  }
+
+}
 
 }
