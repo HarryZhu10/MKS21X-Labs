@@ -8,6 +8,8 @@ public class Sorts {
     int[] test2 = {6,5,7,0,6,5};
     System.out.println(Arrays.toString(test2));
     selectionSort(test2);
+    int[] test3 = {4,3,2,10,12,1,5,6};
+    insertionSort(test3);
   }
 
 /*
@@ -71,16 +73,41 @@ public static int aryIndexOf(int[] ary, int start, int target) {
   }
 
 /*
+Insert and push up method
+*/
+
+public static void insert(int[] data, int startIndex, int endIndex) {
+  int save = data[startIndex];
+  for (int i = startIndex; i >= endIndex; i -- ) {
+    if (i == endIndex) {
+      data[i] = save;
+    } else {
+    data[i] = data[i - 1];
+  }
+  }
+}
+
+
+/*
 Insertion Sort
 */
 
 public static void insertionSort(int[]data){
   for (int i = 1; i < data.length; i ++) {
     if (data[i] < data[i - 1]) {
-      
+      boolean stop = false;
+      for (int x = i; x >= 0 && !stop; x --) {
+        if (x == 0) {
+          insert(data, i, 0);
+        } else {
+        if (data[i] > data[x - 1]) {
+          insert(data, i, x);
+          stop = true;
+        }
+      }
+      }
     }
   }
-
 }
 
 }
