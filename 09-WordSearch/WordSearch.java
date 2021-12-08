@@ -12,18 +12,16 @@ public class WordSearch{
     data = new char[rows][cols];
       for (int i = 0; i < rows; i ++) {
         for (int x = 0; x < cols; x ++) {
-          data[i][x] = '_'
-          ]
+          data[i][x] = '_';
         }
       }
     }
 
     /**Set all values in the WordSearch to underscores'_'*/
     private void clear(){
-      for (int i = 0; i < rows; i ++) {
-        for (int x = 0; x < cols; x ++) {
-          data[i][x] = '_'
-          ]
+      for (int i = 0; i < data[].length; i ++) {
+        for (int x = 0; x < data[][].length; x ++) {
+          data[i][x] = '_';
         }
       }
     }
