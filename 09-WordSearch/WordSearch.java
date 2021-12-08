@@ -19,7 +19,7 @@ public class WordSearch{
 
     /**Set all values in the WordSearch to underscores'_'*/
     private void clear(){
-      for (int i = 0; i < data[].length; i ++) {
+      for (int i = 0; i < data[0].length; i ++) {
         for (int x = 0; x < data[][].length; x ++) {
           data[i][x] = '_';
         }
