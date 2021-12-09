@@ -1,5 +1,6 @@
 /*Lab9: Word Search generator
 */
+import java.util.Arrays;
 public class WordSearch{
     private char[][]data;
 
@@ -19,8 +20,8 @@ public class WordSearch{
 
     /**Set all values in the WordSearch to underscores'_'*/
     private void clear(){
-      for (int i = 0; i < data[0].length; i ++) {
-        for (int x = 0; x < data[][].length; x ++) {
+      for (int i = 0; i < data.length; i ++) {
+        for (int x = 0; x < data[i].length; x ++) {
           data[i][x] = '_';
         }
       }
@@ -31,6 +32,11 @@ public class WordSearch{
      *separated by newlines.
      */
     public String toString(){
+      String newString = "";
+      for (int i = 0; i < data.length; i ++) {
+        newString = newString + Arrays.toString(data[i]);
+      }
+      return newString;
     }
 
 
@@ -60,6 +66,6 @@ public class WordSearch{
      *or there are overlapping letters that do not match, then false is returned.
      *and the board is NOT modified.
      */
-    public boolean addWordVertical(String word,int row, int col){
-    }
+  //  public boolean addWordVertical(String word,int row, int col){
+  //  }
 }
