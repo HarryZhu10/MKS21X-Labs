@@ -1,6 +1,7 @@
 public class Driver {
   public static void main (String[] args) {
-    Wordsearch puzzle = new WordSearch(2,5);
+    WordSearch puzzle = new WordSearch(2,5);
 
+System.out.println(puzzle);
   }
 }
