@@ -34,7 +34,11 @@ public class WordSearch{
     public String toString(){
       String newString = "";
       for (int i = 0; i < data.length; i ++) {
-        newString = newString + Arrays.toString(data[i]);
+        for (int x = 0; x < data[i].length; x ++) {
+          if (x == data[i].length) {
+            
+          }
+        }
       }
       return newString;
     }
@@ -51,9 +55,12 @@ public class WordSearch{
      * or there are overlapping letters that do not match, then false is returned
      * and the board is NOT modified.
      */
-    public boolean addWordHorizontal(String word,int row, int col){
+  /*  public boolean addWordHorizontal(String word,int row, int col){
+      if (word.length() < data[row].length) {
+        for (int i = 0; i < data[])
+      }
     }
-
+*/
 
    /**Attempts to add a given word to the specified position of the WordGrid.
      *The word is added from top to bottom, must fit on the WordGrid, and must
