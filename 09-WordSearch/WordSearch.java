@@ -1,6 +1,7 @@
 /*Lab9: Word Search generator
 */
 import java.util.Arrays;
+import java.util.ArrayList;
 public class WordSearch{
     private char[][]data;
 
@@ -58,9 +59,9 @@ public class WordSearch{
      * and the board is NOT modified.
      */
     public boolean addWordHorizontal(String word,int row, int col){
-      if (word.length() < data[row].length) {
-        for (int i = 0; i < data[row].length; i ++) {
-          data[row]
+      if (word.length() + col < data[row].length ) {
+        for (int i = col; i < word.length(); i ++) {
+          if (data[row][i].equals('_') || data[row][i].equals()) // .equals the character of the String
         }
       }
     }
