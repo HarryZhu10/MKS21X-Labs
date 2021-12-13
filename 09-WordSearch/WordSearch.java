@@ -3,6 +3,7 @@
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
+import java.lang.IndexOutOfBoundsException;
 public class WordSearch{
     private char[][]data;
 
@@ -157,6 +158,7 @@ public class WordSearch{
       if (rowInc == 0 && colInc == 0) {
         return false;
       }
+      try {
       for (int i = 0; i < word.length(); i ++) {
         if (!(data[newRow][newCol] == '_' || data[newRow][newCol] == word.charAt(i))) {
           on = false;
@@ -164,6 +166,9 @@ public class WordSearch{
         newRow = newRow + rowInc;
         newCol = newCol + colInc;
       }
+    } catch (IndexOutOfBoundsException ex) {
+      on = false;
+    }
       if (on) {
         newRow = row;
         newCol = col;
