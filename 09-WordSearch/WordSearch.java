@@ -132,12 +132,12 @@ public class WordSearch{
           int indexOfWord = 0;
           int c2 = col;
           for (int i = row; i - row < count; i ++) {
-            if (!(data[i][c2] == word.charAt(indexOfWord))) {
+            if (!(data[i][c2] == word.charAt(indexOfWord) || data[i][c2] == '_')) {
               return false;
             }
             indexOfWord ++;
           }
-          
+
         }
     }
 }
