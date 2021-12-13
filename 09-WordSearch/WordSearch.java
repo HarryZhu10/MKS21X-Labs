@@ -165,11 +165,11 @@ public class WordSearch{
         newCol = newCol + colInc;
       }
       if (on) {
-        newRow = rol;
+        newRow = row;
         newCol = col;
       for (int i = 0; i < word.length(); i ++) {
         data[newRow][newCol] = word.charAt(i);
-        newRol += rowInc;
+        newRow += rowInc;
         newCol += colInc;
       }
     }
