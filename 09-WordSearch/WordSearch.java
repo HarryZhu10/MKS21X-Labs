@@ -135,9 +135,17 @@ public class WordSearch{
             if (!(data[i][c2] == word.charAt(indexOfWord) || data[i][c2] == '_')) {
               return false;
             }
+            c2++;
             indexOfWord ++;
           }
-
+          indexOfWord = 0;
+          c2 = col;
+          for (int i = row; i - row < count; i ++) {
+            data[i][c2] = word.charAt(indexOfWord);
+            indexOfWord ++;
+            c2 ++;
+          }
         }
+        return true;
     }
 }
