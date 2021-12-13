@@ -32,6 +32,16 @@ public class WordSearch{
       //addAllWords(fileName);  Not complete yet
     }
 
+// Given seed constructor
+public WordSearch(int rows, int cols, String fileName, int seed) {
+  rng = new Random(seed);
+  this.seed = seed;
+  data = new char[rows][cols];
+  clear();
+  wordsAdded = new ArrayList<String>();
+  //addAllWords(fileName);
+}
+
     /**Set all values in the WordSearch to underscores'_'*/
     private void clear(){
       for (int i = 0; i < data.length; i ++) {
