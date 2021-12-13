@@ -10,5 +10,7 @@ puzzle.addWordVertical("MAAE", 0, 2);
 System.out.println(puzzle);
 puzzle.addWordDiagonal("MTAA", 0, 0);
 System.out.println(puzzle);
+puzzle.addWord(3, 0, "CALM", -1, 0);
+System.out.println(puzzle);
   }
 }
