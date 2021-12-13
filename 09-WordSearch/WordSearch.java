@@ -100,9 +100,11 @@ public class WordSearch{
         }
         count = 0;
         for (int i = row; i - row < word.length(); i ++) {
-          
+          data[i][col] = word.charAt(count);
+          count ++;
         }
       }
+      return true;
     }
 
 }
