@@ -2,6 +2,7 @@
 */
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Random;
 public class WordSearch{
     private char[][]data;
 
@@ -148,4 +149,14 @@ public class WordSearch{
         }
         return true;
     }
+
+    public boolean addWord(int row, int col, String word, int rowInc, int colInc) {
+      int newRow = row;
+      int newCol = col;
+      boolean on = true;
+      for (int i = 0; i < word.length(); i ++) {
+        if (data[])
+      }
+    }
+
 }
