@@ -21,6 +21,17 @@ public class WordSearch{
       }
     }
 
+// No given seed so you have to generate yourself
+    public WordSearch(int rows, int cols, String fileName) {
+      rng = new Random();
+      seed = rng.nextInt();
+      rng = new Random (seed);
+      data = new char[rows][cols];
+      clear();
+      wordsAdded = new ArrayList<String>();
+      //addAllWords(fileName);  Not complete yet
+    }
+
     /**Set all values in the WordSearch to underscores'_'*/
     private void clear(){
       for (int i = 0; i < data.length; i ++) {
