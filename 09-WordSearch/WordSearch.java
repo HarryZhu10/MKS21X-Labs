@@ -154,9 +154,26 @@ public class WordSearch{
       int newRow = row;
       int newCol = col;
       boolean on = true;
-      for (int i = 0; i < word.length(); i ++) {
-        if (data[])
+      if (rowInc == 0 && colInc == 0) {
+        return false;
       }
+      for (int i = 0; i < word.length(); i ++) {
+        if (!(data[newRow][newCol] == '_' || data[newRow][newCol] == word.charAt(i))) {
+          on = false;
+        }
+        newRow = newRow + rowInc;
+        newCol = newCol + colInc;
+      }
+      if (on) {
+        newRow = rol;
+        newCol = col;
+      for (int i = 0; i < word.length(); i ++) {
+        data[newRow][newCol] = word.charAt(i);
+        newRol += rowInc;
+        newCol += colInc;
+      }
+    }
+    return true;
     }
 
 }
