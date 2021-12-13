@@ -128,6 +128,16 @@ public class WordSearch{
         c ++;
       }
 
-      
+        if (count >= word.length()) {
+          int indexOfWord = 0;
+          int c2 = col;
+          for (int i = row; i - row < count; i ++) {
+            if (!(data[i][c2] == word.charAt(indexOfWord))) {
+              return false;
+            }
+            indexOfWord ++;
+          }
+          
+        }
     }
 }
