@@ -10,7 +10,12 @@ public class WordSearch{
   private void addAllWords(String filename){
     ArrayList<String> wordsToAdd = loadWordsFromFile(filename);
     //You are writing this
-
+    int randomRow = Math.random(); // make the random possibilities to have values from 0 to size() - 1
+    int randomCol = Math.random(); 
+    for (int i = 0; i < wordsToAdd.size(); i += 0 ) {
+      String word = wordsToAdd.remove(0);
+      for ()
+    }
   }
 
   public WordSearch(int rows,int cols, String fileName){
