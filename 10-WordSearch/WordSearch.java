@@ -30,6 +30,16 @@ public class WordSearch{
     }
   }
 
+  public void fillInRandomLetters() {
+    for (int i = 0; i < grid.length; i ++) {
+      for (int x = 0; x < grid[i].length; x ++) {
+        if (grid[i][x] == '_') {
+          grid[i][x] = (char) ('A' + rng.nextInt(26));
+        }
+      }
+    }
+  }
+
   public static void main (String[] args) {
 
   }
