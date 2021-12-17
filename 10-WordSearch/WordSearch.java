@@ -41,6 +41,23 @@ public class WordSearch{
   }
 
   public static void main (String[] args) {
+    int givenRow = Integer.parseInt(args[0]);
+    int givenCol = Integer.parseInt(args[1]);
+    String fileName = args[2];
+    int mode = Integer.parseInt(args[3]);
+    int seed = 0;
+    WordSearch puzzle = new WordSearch (givenRow, givenCol, fileName);
+    if (args.length == 5) {
+      seed = Integer.parseInt(args[4]);
+      puzzle = new WordSearch (givenRow, givenCol, fileName, seed);
+    }
+
+    if (mode == 0) {
+      puzzle.fillInRandomLetters();
+      System.out.println(puzzle.toString());
+    } else {
+      System.out.println(puzzle.toString());
+    }
 
   }
 
