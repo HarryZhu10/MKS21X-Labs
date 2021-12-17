@@ -18,8 +18,8 @@ public class WordSearch{
       while (reps <= 100 && on) {
         int randomRow = rng.nextInt(grid.length);
         int randomCol = rng.nextInt(grid[0].length);
-        int randRowInc = rng % 2;
-        int randColInc = rng % 2;
+        int randRowInc = rng.nextInt() % 2;
+        int randColInc = rng.nextInt() % 2;
 
         if (addWord(word, randomRow, randomCol, randRowInc, randColInc)) {
           on = false;
