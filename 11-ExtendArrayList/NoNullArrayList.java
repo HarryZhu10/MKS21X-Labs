@@ -11,21 +11,16 @@ public class NoNullArrayList<T> extends ArrayList<T> {
     super(startingCapacity);
   }
 
-public void setValue (T newValue) {
-  value
-}
 
 @Override
   public T set (int index, T element) {
-    super.set(index, element);
-    NoNullArrayList<Integer> data = new NoNullArrayList<Integer>();
-    data = index;
-    return indexOf(data);
+    return super.set(index, element);
   }
 
 @Override
 public boolean add(T element) {
   super.add(element);
+  return true;
 }
 
 @Override
