@@ -1,6 +1,7 @@
 public class ToInt {
 
-  public int valueOfDigit(char c) {
-    
+  public static int valueOfDigit(char c) {
+    return c - 48;
   }
+
 }
