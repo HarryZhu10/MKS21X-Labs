@@ -2,7 +2,7 @@ public class Wizard extends Adventurer {
 private int staffSize;
 private String catchPhrase;
 
-pubic Wizard() {
+public Wizard() {
   this("Gandalf");
 }
 
@@ -29,10 +29,10 @@ public void specialAttack(Damageable other) {
     setHP(getHP() + heal);
     int damage = (int) (Math.random() * 20);
     other.applyDamage(damage);
-    System.out.println(this " has healed itself for " + heal " HP " + " and attacked for " + damage " damage!");
+    System.out.println(this + " has healed itself for " + heal + " HP " + " and attacked " + other + " for " + damage + " damage!");
     setStaffSize(getStaffSize() - 10);
   } else {
-    System.out.println("Your staff is too small!")
+    System.out.println("Your staff is too small!");
     attack(other);
   }
 }
