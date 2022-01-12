@@ -64,16 +64,16 @@ public class Text{
 
     for (int i = 1; i < 81; i ++) {
       go(1,i);
-      System.out.print(colorize(" ", RED + BACKGROUND, BOLD));
+      System.out.print(colorize(" ", RED + BACKGROUND));
       go(30,i);
-      System.out.print(colorize(" ", RED + BACKGROUND, BOLD));
+      System.out.print(colorize(" ", RED + BACKGROUND));
     }
 
     for (int i = 1; i < 31; i ++) {
       go(i,1);
-      System.out.print(colorize(" ", RED + BACKGROUND, BOLD));
+      System.out.print(colorize(" ", RED + BACKGROUND));
       go(i, 80);
-      System.out.print(colorize(" ", RED + BACKGROUND, BOLD));
+      System.out.print(colorize(" ", RED + BACKGROUND));
     }
 
     int[] randInt = new int[4];
