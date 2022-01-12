@@ -79,7 +79,7 @@ public class Text{
     int[] randInt = new int[4];
 
     for (int i = 0; i < randInt.length; i ++) {
-      randInt[i] = (int) (Math.random() * 10) + (int) (Math.random() * 100);
+      randInt[i] = (int) (Math.random() * 100);
     }
 
     int index = 0;
