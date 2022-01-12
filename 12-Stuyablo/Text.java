@@ -62,19 +62,26 @@ public class Text{
     hideCursor();
     clear();
 
-    go(1,1);
-    System.out.println("Abra cadabra hocus pocus...");
-    System.out.println("Abra "+colorize("cadabra",BOLD,YELLOW+BRIGHT,BLUE+BACKGROUND)+" hocus pocus...");
-    System.out.println(colorize("Abra",BOLD,BLACK,YELLOW+BACKGROUND+BRIGHT)+" cadabra hocus pocus...");
+    for (int i = 1; i < 81; i ++) {
+      go(1,i);
+      System.out.print(colorize(" ", RED + BACKGROUND, BOLD));
+      go(30,i);
+      System.out.print(colorize(" ", RED + BACKGROUND, BOLD));
+    }
 
-    go(1,1);//top left
-    System.out.print("TOP!");//overwrites the "Abra" on line 1
+    for (int i = 1; i < 31; i ++) {
+      go(i,1);
+      System.out.print(colorize(" ", RED + BACKGROUND, BOLD));
+      go(i, 80);
+      System.out.print(colorize(" ", RED + BACKGROUND, BOLD));
+    }
 
-    go(4,30);
-    System.out.print("right?");
+    int[] randInt = new int[4];
 
-    go(5,1);//put the terminal at the end of the output again before the program ends.
-    reset();
-    showCursor();
+    for (int i = 0; i < randInt.length; i ++) {
+      randInt[i] = (int) (Math.random() * 10) + (int) (Math.random() * 100);
+      System.out.println("" + randInt[i]);
+    }
+
   }
 }
