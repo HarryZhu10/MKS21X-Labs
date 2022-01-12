@@ -80,8 +80,23 @@ public class Text{
 
     for (int i = 0; i < randInt.length; i ++) {
       randInt[i] = (int) (Math.random() * 10) + (int) (Math.random() * 100);
-      System.out.println("" + randInt[i]);
     }
 
+    int index = 0;
+    for (int x = 2; x < 81; x = x + 79/4) {
+      go(2,x);
+      if (index < randInt.length) {
+        if (randInt[index] < 25) {
+          System.out.print(colorize("" + randInt[index], RED));
+        } else if (randInt[index] > 75) {
+          System.out.print(colorize("" + randInt[index], GREEN));
+        } else {
+          System.out.print(colorize("" + randInt[index], WHITE));
+        }
+        index ++;
+      }
+    }
+    go(31,1);
+    showCursor();
   }
 }
