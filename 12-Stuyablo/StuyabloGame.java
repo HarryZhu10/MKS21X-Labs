@@ -1,8 +1,8 @@
 import java.util.*;
 public class StuyabloGame{
-  private static final int WIDTH = 80;
+  private static final int WIDTH = 100;
   private static final int HEIGHT = 30;
-  private static final int BORDER_COLOR = Text.BLACK;
+  private static final int BORDER_COLOR = Text.WHITE;
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
 
   public static void main(String[] args) {
@@ -16,8 +16,15 @@ public class StuyabloGame{
 
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
     for (int i = 0; i < party.size(); i ++) {
-      Text.go(startRow, 2);
-      Text.colorize("" + party.get(i), Text.WHITE);
+      int col = 2;
+      if ( i == 0 ) {
+      Text.go(startRow, col);
+    } else {
+      Text.go(startRow, col + i * (WIDTH - 1) / (party.size()) );
+    }
+      System.out.print(Text.colorize("" + party.get(i), Text.WHITE));
+      Text.go(startRow + 1, col + i * (WIDTH - 1) / (party.size()));
+      System.out.print("HP: " + Text.colorize("" + party.get(i).getHP(), Text.GREEN));
     }
 
   }
@@ -27,6 +34,8 @@ public class StuyabloGame{
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+    Text.go(startRow, 2);
+    System.out.print(s);
   }
 
   public static void drawScreen(){
@@ -34,44 +43,24 @@ public class StuyabloGame{
     //YOUR CODE HERE
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
-    hideCursor();
-    clear();
+    Text.hideCursor();
+    Text.clear();
 
-    for (int i = 1; i < 81; i ++) {
-      go(1,i);
-      System.out.print(colorize(" ", RED + BACKGROUND));
-      go(30,i);
-      System.out.print(colorize(" ", RED + BACKGROUND));
+    for (int i = 1; i < WIDTH + 1; i ++) {
+      Text.go(1,i);
+      System.out.print(Text.colorize(" ", BORDER_BACKGROUND));
+      Text.go(HEIGHT,i);
+      System.out.print(Text.colorize(" ", BORDER_BACKGROUND));
     }
 
-    for (int i = 1; i < 31; i ++) {
-      go(i,1);
-      System.out.print(colorize(" ", RED + BACKGROUND));
-      go(i, 80);
-      System.out.print(colorize(" ", RED + BACKGROUND));
+    for (int i = 1; i < HEIGHT + 1; i ++) {
+      Text.go(i,1);
+      System.out.print(Text.colorize(" ", BORDER_BACKGROUND));
+      Text.go(i, WIDTH);
+      System.out.print(Text.colorize(" ", BORDER_BACKGROUND));
     }
 
-    int[] randInt = new int[4];
-
-    for (int i = 0; i < randInt.length; i ++) {
-      randInt[i] = (int) (Math.random() * 100);
-    }
-
-    int index = 0;
-    for (int x = 2; x < 81; x = x + 79/4) {
-      go(2,x);
-      if (index < randInt.length) {
-        if (randInt[index] < 25) {
-          System.out.print(colorize("" + randInt[index], RED));
-        } else if (randInt[index] > 75) {
-          System.out.print(colorize("" + randInt[index], GREEN));
-        } else {
-          System.out.print(colorize("" + randInt[index], WHITE));
-        }
-        index ++;
-      }
-    }
-    showCursor();
+    Text.showCursor();
   }
 
 
@@ -89,13 +78,16 @@ public class StuyabloGame{
     //YOUR CODE HERE
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
+    enemies.add(new Warrior("Bob"));
     //Adventurers you control:
     //Make an ArrayList of Adventurers and add 3 Adventurers to it.
     ArrayList<Adventurer> party = new ArrayList<>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-
+    party.add(new Wizard("Harry Potter"));
+    party.add(new Wizard());
+    party.add(new Warrior("Barbarian"));
     //Main loop
     boolean partyTurn = false;
     int whichPlayer = 0;
