@@ -18,7 +18,7 @@ public class Game{
       Scanner in = new Scanner(System.in);
 
   if (!userInput.equals("")) {
-      for (int x = 0; x < randInt.length; x ++) {
+      for (int x = 0; x < 4; x ++) {
         randInt[x] = (int) (Math.random() * 100);
       }
   }
