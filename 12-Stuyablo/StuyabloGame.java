@@ -11,8 +11,7 @@ public class StuyabloGame{
 
 
 
-//Try to add this code that when a person skips turn it will say : name "tripped" and lost its turn
-
+//REMEMBER TO MAKE THE HEALTH CHANGE COLORS WHEN IT REACHES A CERTAIN PERCENT
 
 
 
@@ -121,11 +120,11 @@ public class StuyabloGame{
       //display event based on last turn's input
       if(partyTurn){
         //Process user input:
-        if(input.equals("attack")){
+        if(input.equals("attack") || input.equals("")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-          drawText(party.get(whichPlayer).attack(enemies.get(0)), HEIGHT / 3); // You can change the 10 to something that works in any width or length
+          drawText(party.get(whichPlayer).attack(enemies.get(0)), HEIGHT / 3);
         }
         else if(input.equals("special")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
@@ -152,13 +151,15 @@ public class StuyabloGame{
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+          drawText(enemies.get(0).attack(party.get( (int) (Math.random() * party.size() ))), HEIGHT / 3); // You can change who the enemies attack in the future
         }
 
         //after enemy goes, change back to player's turn.
         partyTurn=true;
         whichPlayer = 0;
         //display which player's turn is next and prompt for action.
-        drawText("Enter command for "+party.get(whichPlayer)+": attack/special/quit",HEIGHT/2);
+        drawText("Enter command for "+party.get(whichPlayer)+": attack/special/quit",HEIGHT / 2 );
 
         //end the turn.
         turn++;
