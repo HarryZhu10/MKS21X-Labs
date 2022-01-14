@@ -9,6 +9,20 @@ public class StuyabloGame{
     run();
   }
 
+
+
+//Try to add this code that when a person skips turn it will say : name "tripped" and lost its turn
+
+
+
+
+
+
+
+
+
+
+
   //Display a List of 1-4 adventurers on the rows row through row+3 (4 rows max)
   //Should include Name and HP on 2 separate lines. (more to be added later)
   public static void drawParty(ArrayList<Adventurer> party,int startRow){
@@ -111,11 +125,13 @@ public class StuyabloGame{
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+          drawText(party.get(whichPlayer).attack(enemies.get(0)), HEIGHT / 3); // You can change the 10 to something that works in any width or length
         }
         else if(input.equals("special")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+          drawText(party.get(whichPlayer).specialAttack(enemies.get(0)), HEIGHT / 3);
         }
         whichPlayer++;
 
