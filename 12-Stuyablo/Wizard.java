@@ -35,7 +35,7 @@ public String specialAttack(Damageable other) {
     return (this + " has healed itself for " + heal + " HP " + " and attacked " + other + " for " + damage + " damage!");
   } else {
     attack(other);
-    System.out.println("Your staff is too small!");
+    return ("Your staff is too small!");
   }
 }
 
