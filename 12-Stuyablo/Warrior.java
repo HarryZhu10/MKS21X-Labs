@@ -1,7 +1,7 @@
 public class Warrior extends Adventurer {
     private int  rage;
     private String warcry;
-
+    private int rageMax;
     public Warrior(){
 	     this("Magnus");
     }
@@ -14,6 +14,7 @@ public class Warrior extends Adventurer {
       super(name,30+(int)(Math.random()*10));
       setWarcry(warcry);
       setRage(rage);
+      rageMax = rage;
     }
 
     //warrior methods
@@ -55,5 +56,16 @@ public class Warrior extends Adventurer {
 	     this.warcry = warcry;
     }
 
+    public String getSpecialName () {
+      return "Rage";
+    }
+
+    public int getSpecial () {
+      return rage;
+    }
+
+    public int getSpecialMax () {
+      return rageMax;
+    }
 
 }
