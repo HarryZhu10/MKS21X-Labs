@@ -24,7 +24,7 @@ public class StuyabloGame{
     }
       System.out.print(Text.colorize("" + party.get(i), Text.WHITE));
       Text.go(startRow + 1, col + i * (WIDTH - 1) / (party.size()));
-      System.out.print("HP: " + Text.colorize("" + party.get(i).getHP(), Text.GREEN));
+      System.out.print("HP: " + Text.colorize("" + party.get(i).getHP(), Text.GREEN) + Text.colorize("/" + party.get(i).getmaxHP(), Text.GREEN));
     }
 
   }
