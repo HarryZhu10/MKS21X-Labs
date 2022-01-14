@@ -5,7 +5,7 @@ public abstract class Adventurer implements Damageable{
     private int maxHP;
 
 
-  
+
     //REPLACE your old attack / specialAttack methods
               //return a String that contains the description of the results of the attack
               public abstract String attack(Damageable other);
@@ -30,6 +30,7 @@ public abstract class Adventurer implements Damageable{
     public Adventurer(String name, int hp){
        this.name = name;
        this.HP = hp;
+       this.maxHP = hp;
     }
 
     //toString method
