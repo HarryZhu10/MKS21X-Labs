@@ -5,9 +5,7 @@ public abstract class Adventurer implements Damageable{
     private int maxHP;
 
 
-    //Abstract methods are meant to be implemented in child classes.
-    public abstract void attack(Damageable other);
-    public abstract void specialAttack(Damageable other);
+  
     //REPLACE your old attack / specialAttack methods
               //return a String that contains the description of the results of the attack
               public abstract String attack(Damageable other);
