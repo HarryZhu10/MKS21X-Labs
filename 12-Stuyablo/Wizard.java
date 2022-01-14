@@ -16,24 +16,24 @@ public Wizard(String name, String catchPhrase, int staffSize) {
   setStaffSize(staffSize);
 }
 
-public void attack(Damageable other){
+public String attack(Damageable other){
   int damage = (int) (Math.random() * 10);
   other.applyDamage(damage);
   setStaffSize(getStaffSize() + 1);
-  System.out.println("The mythical " + this + " attacked " + other + " for " + damage + " damage!");
+  return ("The mythical " + this + " attacked " + other + " for " + damage + " damage!");
 }
 
-public void specialAttack(Damageable other) {
+public String specialAttack(Damageable other) {
   if (getStaffSize() >= 10) {
     int heal = (int) (Math.random() * 10) + 1;
     setHP(getHP() + heal);
     int damage = (int) (Math.random() * 20);
     other.applyDamage(damage);
-    System.out.println(this + " has healed itself for " + heal + " HP " + " and attacked " + other + " for " + damage + " damage!");
     setStaffSize(getStaffSize() - 10);
+    return (this + " has healed itself for " + heal + " HP " + " and attacked " + other + " for " + damage + " damage!");
   } else {
-    System.out.println("Your staff is too small!");
     attack(other);
+    System.out.println("Your staff is too small!");
   }
 }
 
