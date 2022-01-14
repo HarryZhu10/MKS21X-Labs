@@ -53,7 +53,7 @@ public void setStaffSize (int staffSize) {
 }
 
 public String getSpecialName() {
-  return "Staff Size"
+  return "Staff Size";
 }
 
 public int getSpecialMax() {
