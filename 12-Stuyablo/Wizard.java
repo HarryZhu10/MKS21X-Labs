@@ -1,6 +1,7 @@
 public class Wizard extends Adventurer {
 private int staffSize;
 private String catchPhrase;
+private int maxStaffSize;
 
 public Wizard() {
   this("Gandalf");
@@ -14,6 +15,7 @@ public Wizard(String name, String catchPhrase, int staffSize) {
   super(name, 20 + (int) (Math.random() * 10));
   setCatchPhrase(catchPhrase);
   setStaffSize(staffSize);
+  this.maxStaffSize = staffSize;
 }
 
 public String attack(Damageable other){
@@ -50,5 +52,16 @@ public void setStaffSize (int staffSize) {
   this.staffSize = staffSize;
 }
 
+public String getSpecialName() {
+  return "Staff Size"
+}
+
+public int getSpecialMax() {
+  return maxStaffSize;
+}
+
+public int getSpecial() {
+  return staffSize;
+}
 
 }
