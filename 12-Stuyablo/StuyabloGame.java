@@ -10,18 +10,6 @@ public class StuyabloGame{
   }
 
 
-
-//REMEMBER TO MAKE THE HEALTH CHANGE COLORS WHEN IT REACHES A CERTAIN PERCENT
-
-
-
-
-
-
-
-
-
-
   //Display a List of 1-4 adventurers on the rows row through row+3 (4 rows max)
   //Should include Name and HP on 2 separate lines. (more to be added later)
   public static void drawParty(ArrayList<Adventurer> party,int startRow){
@@ -37,7 +25,13 @@ public class StuyabloGame{
     }
       System.out.print(Text.colorize("" + party.get(i), Text.WHITE));
       Text.go(startRow + 1, col + i * (WIDTH - 1) / (party.size()));
+      if ( ((double) party.get(i).getHP()) / party.get(i).getmaxHP() >= 0.75) {
       System.out.print("HP: " + Text.colorize("" + party.get(i).getHP(), Text.GREEN) + Text.colorize("/" + party.get(i).getmaxHP(), Text.GREEN));
+    } else if (((double) party.get(i).getHP()) / party.get(i).getmaxHP() <= 0.25) {
+      System.out.print("HP: " + Text.colorize("" + party.get(i).getHP(), Text.RED) + Text.colorize("/" + party.get(i).getmaxHP(), Text.RED));
+    } else {
+      System.out.print("HP: " + Text.colorize("" + party.get(i).getHP(), Text.WHITE) + Text.colorize("/" + party.get(i).getmaxHP(), Text.WHITE));
+    }
       Text.go(startRow + 2, col + i * (WIDTH - 1) / (party.size()));
       System.out.print("" + party.get(i).getSpecialName() + ": " + Text.colorize("" + party.get(i).getSpecial(), Text.CYAN) + Text.colorize("/" + party.get(i).getSpecialMax(), Text.CYAN));
     }
