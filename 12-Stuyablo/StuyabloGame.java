@@ -24,7 +24,11 @@ public class StuyabloGame{
       Text.go(startRow, col + i * (WIDTH - 1) / (party.size()) );
     }
       System.out.print(Text.colorize("" + party.get(i), Text.WHITE));
+
       Text.go(startRow + 1, col + i * (WIDTH - 1) / (party.size()));
+      System.out.print("" + party.get(i).getSpecialName() + ": " + Text.colorize("" + party.get(i).getSpecial(), Text.CYAN) + Text.colorize("/" + party.get(i).getSpecialMax(), Text.CYAN));
+
+      Text.go(startRow + 2, col + i * (WIDTH - 1) / (party.size()));
       if ( ((double) party.get(i).getHP()) / party.get(i).getmaxHP() >= 0.75) {
       System.out.print("HP: " + Text.colorize("" + party.get(i).getHP(), Text.GREEN) + Text.colorize("/" + party.get(i).getmaxHP(), Text.GREEN));
     } else if (((double) party.get(i).getHP()) / party.get(i).getmaxHP() <= 0.25) {
@@ -32,8 +36,7 @@ public class StuyabloGame{
     } else {
       System.out.print("HP: " + Text.colorize("" + party.get(i).getHP(), Text.WHITE) + Text.colorize("/" + party.get(i).getmaxHP(), Text.WHITE));
     }
-      Text.go(startRow + 2, col + i * (WIDTH - 1) / (party.size()));
-      System.out.print("" + party.get(i).getSpecialName() + ": " + Text.colorize("" + party.get(i).getSpecial(), Text.CYAN) + Text.colorize("/" + party.get(i).getSpecialMax(), Text.CYAN));
+
     }
 
   }
